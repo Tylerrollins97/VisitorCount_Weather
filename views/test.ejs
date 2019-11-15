@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <% include('header.ejs') %>
+  </head>
+  <body>
+    <% include('body.ejs') %>
+    <div class="info">
+      <% info.forEach(function(info){ %>
+        <h2><%= info.visitor %></h2>
+        <h4><%= info.node %></h4>
+        <h4><%= info.npm %></h4>
+      <% })%>
+    </div>
+
+    <fieldset>
+      <form action="/" method="post">
+        <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+        <input type="submit" class="ghost-button" value="Get Weather">
+      </form>
+      <% if(weather !== null){ %>
+        <p><%= weather %></p>
+      <% } %>
+
+      <% if(error !== null){ %>
+        <p><%= error %></p>
+      <% } %>
+    </fieldset>
+  </div>
+</body>
+</html>
+
+
+  </body>
+</html>

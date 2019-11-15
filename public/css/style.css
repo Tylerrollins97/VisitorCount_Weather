@@ -1,0 +1,9 @@
+app.get('/', function(req, res){
+  userCount++;
+  res.render('index',{info : [
+            { visitor: 'You are visitor number ' + userCount + ' congrats!'},
+            { node: `Node Version: ${process.version}`},
+            { npmName: 'NPM Version'},
+            { npm: require('./package.json').version}
+  ]});
+});
